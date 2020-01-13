@@ -57,6 +57,14 @@
                                                           nibName:nil
                                                            bundle:nil];
         _dummy.name = kIgnoreMessageWithName;
+        
+        Class clazz = NSClassFromString(@"GeneratedPluginRegistrant");
+        if (clazz) {
+            if ([clazz respondsToSelector:NSSelectorFromString(@"registerWithRegistry:")]) {
+                [clazz performSelector:NSSelectorFromString(@"registerWithRegistry:")
+                            withObject:_engine];
+            }
+        }
     }
     
     return self;

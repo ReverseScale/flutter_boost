@@ -217,8 +217,6 @@ static NSUInteger kInstanceCounter = 0;
                                                  pageName:_name
                                                    params:_params
                                                  uniqueId:self.uniqueIDString];
-    // 释放截图
-    [self detatchFlutterEngine];
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
     [super viewWillDisappear:animated];
 }
@@ -230,6 +228,8 @@ static NSUInteger kInstanceCounter = 0;
                                                 pageName:_name
                                                   params:_params
                                                 uniqueId:self.uniqueIDString];
+    // 释放截图
+    [self detatchFlutterEngine];
     [super viewDidDisappear:animated];
 //  instead of calling [super viewDidDisappear:animated];, call super's super
 //    struct objc_super target = {
